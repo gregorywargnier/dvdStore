@@ -4,4 +4,26 @@
 
 {% block content %}
 <h1>bonjour</h1>
+<div class="container">
+    <h2 class="mx-auto">Les Catégories</h2>
+    <div class="row">
+        {% for Categories in categories %}
+        <div class="card mx-2" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ Categories.name }}</h5>
+                <p class="card-text">{{ Categories.description | raw }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col-2 align-self-center">
+            <p>Voir plus de catégories</p>
+        </div>
+    </div>
+    <div></div>
+    <h2>DVD</h2>
+</div>
+
+
 {% endblock %}

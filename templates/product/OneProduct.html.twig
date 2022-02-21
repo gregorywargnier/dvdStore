@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre dvd{% endblock %}
+
+{% block content %}
+    <h2>DVD</h2>
+    <div class="row">
+        <div class="card mx-2" style="width: 18rem;">
+            <!--  <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title"> {{ dvd.name }} </h5>
+                <p class="card-text">{# {{ Categories.description | raw }} #} </p>
+            </div>
+        </div>
+    <div class="col-2 align-self-center">
+{% endblock %}

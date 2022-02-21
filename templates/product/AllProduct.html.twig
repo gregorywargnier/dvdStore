@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}tous les DVD{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Tous nos DVD</h2>
+    <div class="row">
+        {% for Product in product %}
+            <div class="card mx-2" style="width: 18rem;">
+                <!--  <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ Product.name }}</h5>
+                    <p class="card-text">{{ Product.description | raw }}</p>
+                    <a href="{{ path('oneProduct',{'slug': Product.slug}) }}">voir</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

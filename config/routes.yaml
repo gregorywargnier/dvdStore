@@ -1,3 +1,16 @@
 home:
     path: /
     controller: App\Controller\homeController
+#catégory#
+category:
+    path: /categories
+    controller: App\Controller\category\AllCategoriesController
+
+#product#
+product:
+    path: /product
+    controller: App\Controller\product\AllProductController
+#product#
+oneProduct:
+    path: /product/ourProduct/{slug}
+    controller: App\Controller\product\OneProductController

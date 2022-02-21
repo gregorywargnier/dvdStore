@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -44,6 +45,19 @@ class Category
         $this->dvds = new ArrayCollection();
     }
 
+    /**
+     * return a slug !
+     *
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     *
+     * @return void
+     */
+    public function initializeSlug() {
+        $slugify = new Slugify();
+        $this->slug = $slugify->slugify($this->name);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -83,6 +97,11 @@ class Category
         $this->description = $description;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 
     /**

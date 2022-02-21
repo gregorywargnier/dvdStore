@@ -4,4 +4,40 @@
 
 {% block content %}
 <h1>bonjour</h1>
+<div class="container">
+    <h2>Les Catégories</h2>
+    <div class="row">
+        {% for Categories in categories %}
+        <div class="card mx-2" style="width: 18rem;">
+          <!--  <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title">{{ Categories.name }}</h5>
+                <p class="card-text">{{ Categories.description | raw }}</p>
+                <a href="#">voir</a>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col-2 align-self-center">
+            <p><a href="{{ path('category') }}"> Voir plus de catégories</a></p>
+        </div>
+    </div>
+    <div class="trait"></div>
+    <h2>DVD</h2>
+    <div class="row">
+        {% for Product in product %}
+            <div class="card mx-2" style="width: 18rem;">
+                <!--  <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h5 class="card-title"> {{ Product.name }} </h5>
+                    <p class="card-text">{# {{ Categories.description | raw }} #} </p>
+                    <a href="{{ path('oneProduct',{'slug': Product.slug}) }}">voir</a>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="col-2 align-self-center">
+            <p><a href="{{ path('product') }}"> Voir plus de dvd</a></p>
+        </div>
+</div>
+
+
 {% endblock %}

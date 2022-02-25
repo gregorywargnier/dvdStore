@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{% trans %}Register {% endtrans %}{% endblock %}
 
 {% block content %}
-    <h2>Register</h2>
+    <h2>{% trans %}Register {% endtrans %}</h2>
 <div class="container">
     <div class="justify-content-center text-center">
         {{ form_start(registrationForm) }}
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-10 mx-auto">
+        <div class="col-2 mx-auto">
             <div>
                 {{ form_label(registrationForm.password) }}
                 {{ form_widget(registrationForm.password) }}
@@ -96,7 +96,7 @@
                 </label>
             </div>
         </div>
-        <button type="submit" class="btn btn-lg btn-primary">Register</button>
+        <button type="submit" class="btn btn-lg btn-primary">{% trans %}Registration{% endtrans %}</button>
         {{ form_end(registrationForm) }}
     </div>
 </div>
